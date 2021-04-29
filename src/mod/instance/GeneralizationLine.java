@@ -1,12 +1,7 @@
 package mod.instance;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Point;
-import java.awt.Polygon;
-
-import javax.swing.JPanel;
+import java.awt.*;
+import javax.swing.*;
 
 import Define.AreaDefine;
 import Pack.DragPack;
@@ -42,6 +37,40 @@ public class GeneralizationLine extends JPanel implements IFuncComponent, ILineP
 		renewConnect();
 		fpPrime = new Point(fp.x - this.getLocation().x, fp.y - this.getLocation().y);
 		tpPrime = new Point(tp.x - this.getLocation().x, tp.y - this.getLocation().y);
+
+		// Draw Highlight Port
+		if (this.from instanceof BasicClass) {
+			if (((BasicClass) from).highlightPort == this.fromSide) {
+				Graphics2D g2d = (Graphics2D) g.create();
+				g2d.setStroke(new BasicStroke(5));
+				g2d.setColor(Color.RED);
+				g2d.drawLine(fpPrime.x, fpPrime.y, tpPrime.x, tpPrime.y);
+			}
+		} else if (this.from instanceof UseCase) {
+			if (((UseCase) from).highlightPort == this.fromSide) {
+				Graphics2D g2d = (Graphics2D) g.create();
+				g2d.setStroke(new BasicStroke(5));
+				g2d.setColor(Color.YELLOW);
+				g2d.drawLine(fpPrime.x, fpPrime.y, tpPrime.x, tpPrime.y);
+			}
+		} 
+		
+		if (this.to instanceof BasicClass) {
+			if (((BasicClass) to).highlightPort == this.toSide) {
+				Graphics2D g2d = (Graphics2D) g.create();
+				g2d.setStroke(new BasicStroke(5));
+				g2d.setColor(Color.RED);
+				g2d.drawLine(fpPrime.x, fpPrime.y, tpPrime.x, tpPrime.y);
+			}
+		} else if (this.to instanceof UseCase) {
+			if (((UseCase) to).highlightPort == this.toSide) {
+				Graphics2D g2d = (Graphics2D) g.create();
+				g2d.setStroke(new BasicStroke(5));
+				g2d.setColor(Color.YELLOW);
+				g2d.drawLine(fpPrime.x, fpPrime.y, tpPrime.x, tpPrime.y);
+			}
+		}
+
 		g.setColor(Color.BLACK);
 		g.drawLine(fpPrime.x, fpPrime.y, tpPrime.x, tpPrime.y);
 		paintArrow(g, tpPrime);

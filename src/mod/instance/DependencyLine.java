@@ -36,8 +36,41 @@ public class DependencyLine extends JPanel implements IFuncComponent, ILinePaint
         fpPrime = new Point(fp.x - this.getLocation().x, fp.y - this.getLocation().y);
         tpPrime = new Point(tp.x - this.getLocation().x, tp.y - this.getLocation().y);
 
+        // Draw Highlight Port
+        if (this.from instanceof BasicClass) {
+            if (((BasicClass) from).highlightPort == this.fromSide) {
+                Graphics2D g2d = (Graphics2D) g.create();
+                g2d.setStroke(new BasicStroke(5));
+                g2d.setColor(Color.RED);
+                g2d.drawLine(fpPrime.x, fpPrime.y, tpPrime.x, tpPrime.y);
+            }
+        } else if (this.from instanceof UseCase) {
+            if (((UseCase) from).highlightPort == this.fromSide) {
+                Graphics2D g2d = (Graphics2D) g.create();
+                g2d.setStroke(new BasicStroke(5));
+                g2d.setColor(Color.YELLOW);
+                g2d.drawLine(fpPrime.x, fpPrime.y, tpPrime.x, tpPrime.y);
+            }
+        } 
+        
+        if (this.to instanceof BasicClass) {
+            if (((BasicClass) to).highlightPort == this.toSide) {
+                Graphics2D g2d = (Graphics2D) g.create();
+                g2d.setStroke(new BasicStroke(5));
+                g2d.setColor(Color.RED);
+                g2d.drawLine(fpPrime.x, fpPrime.y, tpPrime.x, tpPrime.y);
+            }
+        } else if (this.to instanceof UseCase) {
+            if (((UseCase) to).highlightPort == this.toSide) {
+                Graphics2D g2d = (Graphics2D) g.create();
+                g2d.setStroke(new BasicStroke(5));
+                g2d.setColor(Color.YELLOW);
+                g2d.drawLine(fpPrime.x, fpPrime.y, tpPrime.x, tpPrime.y);
+            }
+        }
+
         Graphics2D g2d = (Graphics2D) g.create();
-        Stroke dashed = new BasicStroke(1, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[] { 8 }, 0);
+        Stroke dashed = new BasicStroke(1, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[] { 12 }, 0);
         g2d.setStroke(dashed);
         g2d.drawLine(fpPrime.x, fpPrime.y, tpPrime.x, tpPrime.y);
 

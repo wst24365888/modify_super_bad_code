@@ -104,11 +104,13 @@ public class CanvasPanelHandler extends PanelHandler {
 				switch (core.isFuncComponent(members.elementAt(i))) {
 				case 0:
 					((BasicClass) members.elementAt(i)).setSelect(true);
+					((BasicClass) members.elementAt(i)).setHighlightPort(e.getPoint());
 					selectComp.add(members.elementAt(i));
 					isSelect = true;
 					break;
 				case 1:
 					((UseCase) members.elementAt(i)).setSelect(true);
+					((UseCase) members.elementAt(i)).setHighlightPort(e.getPoint());
 					selectComp.add(members.elementAt(i));
 					isSelect = true;
 					break;
