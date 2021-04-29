@@ -45,6 +45,9 @@ public class GroupContainer extends JPanel implements IFuncComponent {
 					((GeneralizationLine) this.getComponent(i)).setSelect(isSelect);
 					break;
 				case 5:
+					((DependencyLine) this.getComponent(i)).setSelect(isSelect);
+					break;
+				case 6:
 					((GroupContainer) this.getComponent(i)).setSelect(isSelect);
 					break;
 				default:
