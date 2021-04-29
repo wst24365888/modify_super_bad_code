@@ -14,31 +14,26 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 @SuppressWarnings("serial")
-public class SingleLineInputBox extends JFrame
-{
-	private JPanel		contentPane;
-	private JTextField	textField;
-	MsgBoxHandler		mbh;
+public class SingleLineInputBox extends JFrame {
+	private JPanel contentPane;
+	private JTextField textField;
+	MsgBoxHandler mbh;
 
 	/**
 	 * Create the frame.
 	 */
-	public SingleLineInputBox(MsgBoxHandler mbh)
-	{
+	public SingleLineInputBox(MsgBoxHandler mbh) {
 		this.mbh = mbh;
 		setVisible(true);
 		setAlwaysOnTop(true);
-		addWindowListener(new WindowAdapter()
-		{
+		addWindowListener(new WindowAdapter() {
 			@Override
-			public void windowClosed(WindowEvent arg0)
-			{
+			public void windowClosed(WindowEvent arg0) {
 				close();
 			}
 
 			@Override
-			public void windowClosing(WindowEvent e)
-			{
+			public void windowClosing(WindowEvent e) {
 				close();
 			}
 		});
@@ -59,11 +54,9 @@ public class SingleLineInputBox extends JFrame
 		contentPane.add(lblNewLabel);
 		//
 		JButton btnOk = new JButton("OK");
-		btnOk.addMouseListener(new MouseAdapter()
-		{
+		btnOk.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent arg0)
-			{
+			public void mouseClicked(MouseEvent arg0) {
 				btnOK();
 			}
 		});
@@ -71,11 +64,9 @@ public class SingleLineInputBox extends JFrame
 		contentPane.add(btnOk);
 		//
 		JButton btnCancel = new JButton("Cancel");
-		btnCancel.addMouseListener(new MouseAdapter()
-		{
+		btnCancel.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e)
-			{
+			public void mouseClicked(MouseEvent e) {
 				btnCancel();
 			}
 		});
@@ -83,19 +74,16 @@ public class SingleLineInputBox extends JFrame
 		contentPane.add(btnCancel);
 	}
 
-	void btnOK()
-	{
+	void btnOK() {
 		mbh.callBack(new SendText(textField.getText(), null));
 		close();
 	}
 
-	void btnCancel()
-	{
+	void btnCancel() {
 		close();
 	}
 
-	void close()
-	{
+	void close() {
 		this.setAlwaysOnTop(false);
 		this.setVisible(false);
 	}

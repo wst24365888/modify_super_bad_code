@@ -1,5 +1,4 @@
 package Pack;
 
-public class Package
-{
+public class Package {
 }

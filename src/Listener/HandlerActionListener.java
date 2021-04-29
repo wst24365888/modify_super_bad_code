@@ -5,42 +5,35 @@ import java.awt.event.MouseListener;
 
 import bgWork.handler.PanelHandler;
 
-public class HandlerActionListener implements MouseListener
-{
+public class HandlerActionListener implements MouseListener {
 	PanelHandler handler;
 
-	public HandlerActionListener(PanelHandler h)
-	{
+	public HandlerActionListener(PanelHandler h) {
 		this.handler = h;
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent e)
-	{
+	public void mouseClicked(MouseEvent e) {
 		handler.ActionPerformed(e);
 	}
 
 	@Override
-	public void mouseEntered(MouseEvent e)
-	{
+	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 	}
 
 	@Override
-	public void mouseExited(MouseEvent e)
-	{
+	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 	}
 
 	@Override
-	public void mousePressed(MouseEvent e)
-	{
+	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 	}
 
 	@Override
-	public void mouseReleased(MouseEvent e)
-	{
+	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 	}
 }

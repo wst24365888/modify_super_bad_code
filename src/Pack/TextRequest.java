@@ -1,50 +1,41 @@
 package Pack;
 
-public class TextRequest extends Package
-{
-	String	text	= "";
-	Object	src;
-	Object	dest;
+public class TextRequest extends Package {
+	String text = "";
+	Object src;
+	Object dest;
 
-	public TextRequest()
-	{
+	public TextRequest() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public TextRequest(String t, Object src, Object dest)
-	{
+	public TextRequest(String t, Object src, Object dest) {
 		this.setText(text);
 		this.setSrc(src);
 		this.setDest(dest);
 	}
 
-	public String getText()
-	{
+	public String getText() {
 		return text;
 	}
 
-	public void setText(String text)
-	{
+	public void setText(String text) {
 		this.text = text;
 	}
 
-	public Object getSrc()
-	{
+	public Object getSrc() {
 		return src;
 	}
 
-	public void setSrc(Object src)
-	{
+	public void setSrc(Object src) {
 		this.src = src;
 	}
 
-	public Object getDest()
-	{
+	public Object getDest() {
 		return dest;
 	}
 
-	public void setDest(Object dest)
-	{
+	public void setDest(Object dest) {
 		this.dest = dest;
 	}
 }

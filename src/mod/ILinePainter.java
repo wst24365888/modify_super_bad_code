@@ -5,8 +5,7 @@ import java.awt.Point;
 
 import Pack.DragPack;
 
-public interface ILinePainter
-{
+public interface ILinePainter {
 	void paintArrow(Graphics g, Point point);
 
 	public void setConnect(DragPack dPack);
